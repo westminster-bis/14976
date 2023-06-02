@@ -81,3 +81,25 @@ def game():
                 print("\nGame Over.\n")                
                 print(" **** " +turn + " won. ****")
                 break 
+        # If neither X nor O wins and the board is full, we'll declare the result as 'tie'.
+        if count == 9:
+            print("\nGame Over.\n")                
+            print("It's a Tie!!")
+
+        # Now we have to change the player after every move.
+        if turn =='X':
+            turn = 'O'
+        else:
+            turn = 'X'        
+    
+    # Now we will ask if player wants to restart the game or not.
+    # And here we can see loop function that is a control flow statement that is used to repeatedly execute a group of statements as long as the condition is satisfied. Such a type of statement is also known as an iterative statement
+    restart = input("Do want to play Again?(y/n)")
+    if restart == "y" or restart == "Y":  
+        for key in board_keys:
+            theBoard[key] = " "
+
+        game()
+
+if __name__ == "__main__":
+    game()
